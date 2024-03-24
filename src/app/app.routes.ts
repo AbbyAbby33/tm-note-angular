@@ -11,6 +11,7 @@ export const routes: Routes = [
         children: [
             { path: 'home', component: HomeComponent },
             { path: 'note', loadChildren: () => import('./pages/note/route').then(mod => mod.NOTE_ROUTES) },
+            { path: '**', redirectTo: '/login', pathMatch: 'full' },
         ]
     },
     { path: '**', redirectTo: '/login', pathMatch: 'full' },
