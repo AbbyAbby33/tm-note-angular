@@ -1,0 +1,31 @@
+$menuSpace: 8px;
+
+.menu-icon {
+    margin-left: 20px;
+    transform: rotate(90deg);
+
+    div {
+        width: 1px;
+        height: 26px;
+        position: relative;
+        background: black;
+
+        &::after,
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            background: black;
+            width: 1px;
+            height: 100%;
+        }
+
+        &::after {
+            right: $menuSpace;
+        }
+
+        &::before {
+            left: $menuSpace;
+        }
+    }
+}
