@@ -1,5 +1,6 @@
 $menuSpace: 8px;
 
+// menu icon
 .menu-icon {
     margin-left: 20px;
     transform: rotate(90deg);
@@ -28,4 +29,10 @@ $menuSpace: 8px;
             left: $menuSpace;
         }
     }
+}
+
+// application title
+.title {
+    font-family: "Parisienne", cursive;
+    @apply cursor-pointer text-lg font-bold;
 }
