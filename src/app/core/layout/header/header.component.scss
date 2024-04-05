@@ -1,38 +1,14 @@
-$menuSpace: 8px;
-
-// menu icon
-.menu-icon {
-    margin-left: 13px;
-    transform: rotate(90deg);
-
-    div {
-        width: 1px;
-        height: 26px;
-        position: relative;
-        background: black;
-
-        &::after,
-        &::before {
-            content: '';
-            display: block;
-            position: absolute;
-            background: black;
-            width: 1px;
-            height: 100%;
-        }
-
-        &::after {
-            right: $menuSpace;
-        }
-
-        &::before {
-            left: $menuSpace;
-        }
-    }
-}
-
 // application title
 .title {
     font-family: "Parisienne", cursive;
     @apply cursor-pointer text-lg font-bold;
+}
+
+.system-menu {
+    @apply absolute bg-gray-100 w-full min-h-72 text-center p-8 -top-96;
+    transition: top .5s;
+
+    &.open {
+        @apply top-0;
+    }
 }

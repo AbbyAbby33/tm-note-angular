@@ -9,5 +9,9 @@ import { RouterLink } from '@angular/router';
     styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-
+    isOpen = false;
+    
+    toogleMenu(isOpen: boolean) {
+        this.isOpen = isOpen;
+    }
 }
