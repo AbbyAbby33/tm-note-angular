@@ -4,6 +4,6 @@ import { NoteListComponent } from "@pages/note/note-list/note-list.component";
 
 export const NOTE_ROUTES: Route[] = [
     { path: '', component: NoteListComponent },
-    { path: 'detail', component: NoteDetailComponent },
+    { path: 'detail/:id', component: NoteDetailComponent },
     { path: 'list', component: NoteListComponent },
 ];

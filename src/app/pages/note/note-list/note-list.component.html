@@ -25,7 +25,9 @@
                     <div class="icon">
                         <i class="material-icons leading-7 text-lg">eco</i>
                     </div>
-                    <p>{{ note.title }}</p>
+                    <p>
+                        <a [routerLink]="'/note/detail/' + note.id">{{ note.title }}</a>
+                    </p>
                 </div>
                 }
             </ul>

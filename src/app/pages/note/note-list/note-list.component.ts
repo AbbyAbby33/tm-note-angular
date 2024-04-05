@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-note-list',
     standalone: true,
-    imports: [],
+    imports: [RouterLink],
     templateUrl: './note-list.component.html',
     styleUrl: './note-list.component.scss'
 })
@@ -25,15 +26,15 @@ export class NoteListComponent {
         {
             subTitle: '基礎',
             list: [
-                { title: 'Route', category: 'principle' },
-                { title: 'Guard', category: 'principle' },
-                { title: 'Standalone Project', category: 'principle' }
+                { id: '20240406001', title: 'Route', category: 'principle' },
+                { id: '20240406002', title: 'Guard', category: 'principle' },
+                { id: '20240406003', title: 'Standalone Project', category: 'principle' }
             ]
         },
         {
             subTitle: '狀態管理：Ngxs',
             list: [
-                { title: 'Ngxs簡介', category: 'principle' },]
+                { id: '20240406004', title: 'Ngxs簡介', category: 'principle' },]
         }
     ];
 }
