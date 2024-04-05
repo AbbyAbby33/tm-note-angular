@@ -1,0 +1,22 @@
+.book {
+    @apply text-white w-24 h-36;
+    background-size: cover;
+    background-image: url("/assets/images/flower-1.jpg");
+    text-shadow: 0.1em 0.1em #333;
+}
+
+.article-list {
+    @apply flex flex-col gap-1;
+
+    .article-row {
+        @apply flex items-start gap-2;
+
+        .icon {
+            @apply text-white w-7 h-7 min-w-7 rounded-full text-center bg-red-300;
+        }
+
+        p {
+            @apply leading-8;
+        }
+    }
+}
