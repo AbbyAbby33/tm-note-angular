@@ -1,0 +1,39 @@
+@mixin book {
+    @apply text-white w-28 h-40 md:w-52 md:h-72 p-2 md:p-6;
+    background-size: cover;
+    text-shadow: 0.1em 0.1em #333;
+
+    p {
+        @apply text-base md:text-xl font-medium;
+    }
+
+    h2 {
+        @apply text-lg md:text-3xl font-bold;
+    }
+}
+
+.book-1 {
+    @include book;
+    background-image: url("/assets/images/flower-1.jpg");
+}
+
+.book-2 {
+    @include book;
+    background-image: url("/assets/images/flower-2.jpg");
+}
+
+.article-list {
+    @apply flex flex-col gap-2;
+
+    .article-row {
+        @apply flex items-start gap-2;
+
+        .icon {
+            @apply text-white w-8 h-8 min-w-8 rounded-full text-center bg-red-300;
+        }
+
+        p {
+            @apply leading-8;
+        }
+    }
+}
