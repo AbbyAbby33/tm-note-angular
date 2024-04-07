@@ -1,1 +1,12 @@
-<p>note-detail works!</p>
+<div class="flex gap-2 mb-2">
+    <div class="icon">
+        <i class="material-icons leading-7 text-lg">eco</i>
+    </div>
+    <h1 class="font-bold text-xl">{{ noteTitle }}</h1>
+</div>
+<span class="text-xs py-0.5 px-2 bg-gray-200">建立：2023/11/17，更新：2024/04/07</span>
+
+<div class="note-content">
+    <markdown (load)="onLoad($event)" [src]="'assets/notes/2023030601-ngxmarkdown.md'">
+    </markdown>
+</div>
