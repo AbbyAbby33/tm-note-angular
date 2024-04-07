@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { MarkdownModule, MarkdownComponent, provideMarkdown } from 'ngx-markdown';
 
 @Component({
     selector: 'app-note-detail',
     standalone: true,
-    imports: [MarkdownModule, MarkdownComponent],
+    imports: [MarkdownModule, MarkdownComponent, RouterLink],
     providers: [provideMarkdown()],
     templateUrl: './note-detail.component.html',
     styleUrl: './note-detail.component.scss'

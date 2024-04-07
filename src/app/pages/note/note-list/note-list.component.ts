@@ -26,6 +26,7 @@ export class NoteListComponent {
         {
             subTitle: '基礎',
             list: [
+                { id: '20240406001', title: 'Angular專案配置', category: 'principle' },
                 { id: '20240406001', title: 'Route', category: 'principle' },
                 { id: '20240406002', title: 'Guard', category: 'principle' },
                 { id: '20240406003', title: 'Standalone Project', category: 'principle' }
