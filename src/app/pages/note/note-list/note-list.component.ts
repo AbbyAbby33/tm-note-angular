@@ -33,11 +33,15 @@ export class NoteListComponent implements OnInit {
     this.bookFacade.bookList.subscribe(value => {
       if (value) {
         this.bookList = value;
-        this.currentBook = value[0]['list'][0];
-        this.bookTitle = this.currentBook.name;
-        this.getNoteList();
+        this.setBook(value[0]['list'][0]);
       }
     })
+  }
+
+  setBook(book: Book) {
+    this.currentBook = book;
+    this.bookTitle = this.currentBook.name;
+    this.getNoteList();
   }
 
   getNoteList() {
@@ -48,5 +52,9 @@ export class NoteListComponent implements OnInit {
         this.noteList = value;
       }
     })
+  }
+
+  changeBook(item: Book) {
+    this.setBook(item);
   }
 }

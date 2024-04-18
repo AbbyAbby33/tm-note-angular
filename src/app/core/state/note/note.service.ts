@@ -46,7 +46,6 @@ export class NoteService {
 
   // 如果以後有做後端，這裡就是打api
   getNoteList(key: string) {
-    console.log('hi')
     let list: NoteList[] = [];
     switch (key) {
       case 'angular':

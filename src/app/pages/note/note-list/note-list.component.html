@@ -6,7 +6,7 @@
             @if (book.list.length) {
             <ul class="flex flex-col gap-1">
                 @for (item of book.list; track $index) {
-                <li class="py-1.5 px-1 book">{{ item.name }}</li>
+                <li class="py-1.5 px-1 book" (click)="changeBook(item)">{{ item.name }}</li>
                 }
             </ul>
             }
