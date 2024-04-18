@@ -15,7 +15,7 @@
     </ul>
     <div class="w-full">
         <h2 class="font-bold text-xl">{{ bookTitle }}</h2>
-        @for (book of bookMenuList; track $index) {
+        @for (book of noteList; track $index) {
         <div class="mt-4">
             <h3 class="text-lg px-2 bg-gray-300">{{ book.subTitle }}</h3>
             @if (book.list.length) {

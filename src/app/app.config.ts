@@ -9,6 +9,7 @@ import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
 import { NgxsModule } from '@ngxs/store';
 import { BookState } from '@core/state/book/book.state';
 import { environment } from 'src/environments/environment';
+import { NoteState } from '@core/state/note/note.state';
 
 export const appConfig: ApplicationConfig = {
     providers: [
@@ -20,7 +21,7 @@ export const appConfig: ApplicationConfig = {
             sanitize: SecurityContext.NONE,
         }),
         importProvidersFrom(
-          NgxsModule.forRoot([BookState], {
+          NgxsModule.forRoot([BookState, NoteState], {
             developmentMode: !environment.production,
           })
         ),

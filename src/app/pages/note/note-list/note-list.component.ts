@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { BookList } from '@core/models/book.model';
+import { Book, BookList } from '@core/models/book.model';
+import { NoteList } from '@core/models/note.model';
 import { BookFacade } from '@core/state/book/book.facade';
+import { NoteFacade } from '@core/state/note/note.facade';
 
 @Component({
   selector: 'app-note-list',
@@ -12,33 +14,39 @@ import { BookFacade } from '@core/state/book/book.facade';
 })
 export class NoteListComponent implements OnInit {
   bookList: BookList[] = [];
+  currentBook: Book | null = null;
 
-  bookTitle = 'Angular';
+  bookTitle = '';
+  noteList: NoteList[] = [];
 
-  bookMenuList = [
-    {
-      subTitle: '基礎',
-      list: [
-        { id: '20240406001', title: 'Angular專案配置', category: 'principle' },
-        { id: '20240406001', title: 'Route', category: 'principle' },
-        { id: '20240406002', title: 'Guard', category: 'principle' },
-        { id: '20240406003', title: 'Standalone Project', category: 'principle' }
-      ]
-    },
-    {
-      subTitle: '狀態管理：Ngxs',
-      list: [
-        { id: '20240406004', title: 'Ngxs簡介', category: 'principle' },
-      ]
-    }
-  ];
-
-  constructor(private bookFacade: BookFacade) { }
+  constructor(
+    private bookFacade: BookFacade,
+    private noteFacade: NoteFacade,
+  ) { }
 
   ngOnInit() {
+    this.getBookList();
+  }
+
+  getBookList() {
     this.bookFacade.getBookList();
     this.bookFacade.bookList.subscribe(value => {
-      this.bookList = value;
+      if (value) {
+        this.bookList = value;
+        this.currentBook = value[0]['list'][0];
+        this.bookTitle = this.currentBook.name;
+        this.getNoteList();
+      }
+    })
+  }
+
+  getNoteList() {
+    const key = this.currentBook ? this.currentBook.key : '';
+    this.noteFacade.getNoteList(key);
+    this.noteFacade.noteList.subscribe(value => {
+      if (value) {
+        this.noteList = value;
+      }
     })
   }
 }
